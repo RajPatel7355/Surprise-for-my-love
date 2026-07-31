@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff1f5"/>
+      <stop offset="1" stop-color="#ef9fbb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg2)"/>
+  <circle cx="440" cy="300" r="110" fill="#ffffff" opacity="0.32"/>
+  <circle cx="810" cy="580" r="170" fill="#ffffff" opacity="0.2"/>
+  <text x="600" y="410" text-anchor="middle" font-size="92" font-family="Georgia, serif" fill="#8e294c">Your Photo 2</text>
+  <text x="600" y="500" text-anchor="middle" font-size="32" font-family="Arial, sans-serif" fill="#71314a">Replace this file inside the assets folder</text>
+  <text x="600" y="650" text-anchor="middle" font-size="95" fill="#b83261">♥</text>
+</svg>

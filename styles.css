@@ -1,0 +1,442 @@
+:root {
+  --rose: #d84f72;
+  --deep-rose: #9f274b;
+  --blush: #ffe7ee;
+  --cream: #fff9f7;
+  --wine: #531d32;
+  --text: #4f3140;
+  --white-glass: rgba(255, 255, 255, 0.76);
+  --shadow: 0 20px 60px rgba(104, 35, 62, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.landing-page,
+.surprise-page {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.85), transparent 25%),
+    radial-gradient(circle at 86% 15%, rgba(255, 215, 228, 0.9), transparent 28%),
+    linear-gradient(135deg, #fff3f6 0%, #ffdce7 45%, #f7bfd2 100%);
+}
+
+.landing-page {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  position: relative;
+}
+
+.landing-card {
+  width: min(680px, 100%);
+  padding: clamp(36px, 7vw, 72px);
+  text-align: center;
+  background: var(--white-glass);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  position: relative;
+  z-index: 2;
+  animation: cardEntrance 1s ease both;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--deep-rose);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  color: var(--wine);
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(3.2rem, 9vw, 6.2rem);
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.landing-message {
+  max-width: 530px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+}
+
+.gift-button,
+.secondary-button {
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.gift-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 28px;
+  background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+  color: white;
+  box-shadow: 0 14px 28px rgba(159, 39, 75, 0.3);
+  font-weight: 600;
+}
+
+.gift-button:hover,
+.secondary-button:hover,
+.reason-card:hover {
+  transform: translateY(-3px);
+}
+
+.gift-button:hover {
+  box-shadow: 0 18px 34px rgba(159, 39, 75, 0.38);
+}
+
+.gift-button:active,
+.secondary-button:active,
+.reason-card:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.gift-icon {
+  font-size: 1.35rem;
+  animation: giftBounce 1.6s infinite;
+}
+
+.tiny-note {
+  margin: 18px 0 0;
+  font-size: 0.82rem;
+  opacity: 0.72;
+}
+
+.floating-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  color: rgba(190, 45, 88, 0.28);
+  animation: floatUp linear forwards;
+  user-select: none;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 90px 24px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  width: min(850px, 100%);
+  padding: clamp(34px, 6vw, 70px);
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 36px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.hero-content p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 0 auto 30px;
+  line-height: 1.9;
+}
+
+.secondary-button {
+  padding: 13px 22px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--deep-rose);
+  border: 1px solid rgba(159, 39, 75, 0.14);
+  box-shadow: 0 10px 24px rgba(100, 37, 63, 0.12);
+  font-weight: 600;
+}
+
+.section-wrap {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 90px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.memory-card {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 26px;
+  box-shadow: 0 18px 45px rgba(104, 35, 62, 0.13);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-7px) rotate(-0.3deg);
+  box-shadow: 0 25px 55px rgba(104, 35, 62, 0.2);
+}
+
+.memory-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.memory-text {
+  padding: 24px;
+}
+
+.memory-text h3 {
+  margin-bottom: 8px;
+  color: var(--wine);
+  font-size: 1.15rem;
+}
+
+.memory-text p,
+.love-letter p,
+.final-card p {
+  line-height: 1.8;
+}
+
+.love-letter-section {
+  padding-top: 45px;
+}
+
+.love-letter {
+  max-width: 840px;
+  margin: auto;
+  padding: clamp(30px, 6vw, 64px);
+  background: rgba(255, 249, 247, 0.9);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.love-letter::before,
+.love-letter::after {
+  content: "❤";
+  position: absolute;
+  color: rgba(216, 79, 114, 0.14);
+  font-size: 4rem;
+}
+
+.love-letter::before {
+  top: 18px;
+  right: 26px;
+}
+
+.love-letter::after {
+  bottom: 18px;
+  left: 26px;
+}
+
+.signature {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-family: "Great Vibes", cursive;
+  color: var(--deep-rose);
+  font-size: 2.2rem;
+}
+
+.reason-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.reason-card {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--wine);
+  box-shadow: 0 14px 34px rgba(104, 35, 62, 0.11);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.reason-card:hover {
+  box-shadow: 0 19px 39px rgba(104, 35, 62, 0.17);
+}
+
+.reason-message {
+  min-height: 58px;
+  margin: 30px auto 0;
+  max-width: 760px;
+  text-align: center;
+  line-height: 1.7;
+  color: var(--deep-rose);
+  font-weight: 500;
+}
+
+.final-card {
+  max-width: 780px;
+  margin: auto;
+  padding: clamp(32px, 6vw, 64px);
+  text-align: center;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.92), rgba(255, 226, 235, 0.88));
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+}
+
+.gift-button.smaller {
+  padding: 14px 22px;
+}
+
+.final-message {
+  min-height: 34px;
+  margin: 24px 0 0;
+  color: var(--deep-rose);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+footer {
+  padding: 34px 20px 44px;
+  text-align: center;
+  color: var(--deep-rose);
+  position: relative;
+  z-index: 2;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  animation: fadeOut 0.65s ease forwards;
+}
+
+.burst-heart {
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+  animation: burst 1s ease-out forwards;
+}
+
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(25px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes giftBounce {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-5px) rotate(-5deg); }
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0) rotate(0deg); opacity: 0; }
+  12% { opacity: 1; }
+  to { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: scale(1.05); }
+}
+
+@keyframes burst {
+  from { transform: translate(-50%, -50%) scale(0.4); opacity: 1; }
+  to { transform: translate(var(--x), var(--y)) scale(1.35) rotate(20deg); opacity: 0; }
+}
+
+@media (max-width: 760px) {
+  .memory-grid,
+  .reason-list {
+    grid-template-columns: 1fr;
+  }
+
+  .section-wrap {
+    padding: 68px 0;
+  }
+
+  .landing-card,
+  .hero-content {
+    border-radius: 24px;
+  }
+
+  .gift-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
